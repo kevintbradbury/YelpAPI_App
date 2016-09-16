@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A148EFB1D8C05900031430B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148EFA1D8C05900031430B /* AppDelegate.swift */; };
-		0A148EFD1D8C05900031430B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148EFC1D8C05900031430B /* ViewController.swift */; };
+		0A148EFD1D8C05900031430B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148EFC1D8C05900031430B /* MainViewController.swift */; };
 		0A148F001D8C05900031430B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A148EFE1D8C05900031430B /* Main.storyboard */; };
 		0A148F021D8C05900031430B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A148F011D8C05900031430B /* Assets.xcassets */; };
 		0A148F051D8C05900031430B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A148F031D8C05900031430B /* LaunchScreen.storyboard */; };
@@ -16,12 +16,15 @@
 		0A148F111D8C119D0031430B /* BlackBeard-inverted_colors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A148F0E1D8C119D0031430B /* BlackBeard-inverted_colors.jpg */; };
 		0A148F151D8C124D0031430B /* treasure-chest-closed-366952319.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A148F131D8C124D0031430B /* treasure-chest-closed-366952319.jpg */; };
 		0A148F161D8C124D0031430B /* treasure-chest-open-366952319.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A148F141D8C124D0031430B /* treasure-chest-open-366952319.jpg */; };
+		0A148F181D8C27C90031430B /* TreasureHuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148F171D8C27C90031430B /* TreasureHuntViewController.swift */; };
+		0A148F1A1D8C29180031430B /* MapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148F191D8C29180031430B /* MapPageViewController.swift */; };
+		0A148F1C1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0A148F1B1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A148EF71D8C05900031430B /* YelpApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A148EFA1D8C05900031430B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A148EFC1D8C05900031430B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A148EFC1D8C05900031430B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A148EFF1D8C05900031430B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A148F011D8C05900031430B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A148F041D8C05900031430B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +33,9 @@
 		0A148F0E1D8C119D0031430B /* BlackBeard-inverted_colors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "BlackBeard-inverted_colors.jpg"; sourceTree = "<group>"; };
 		0A148F131D8C124D0031430B /* treasure-chest-closed-366952319.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "treasure-chest-closed-366952319.jpg"; sourceTree = "<group>"; };
 		0A148F141D8C124D0031430B /* treasure-chest-open-366952319.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "treasure-chest-open-366952319.jpg"; sourceTree = "<group>"; };
+		0A148F171D8C27C90031430B /* TreasureHuntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureHuntViewController.swift; sourceTree = "<group>"; };
+		0A148F191D8C29180031430B /* MapPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPageViewController.swift; sourceTree = "<group>"; };
+		0A148F1B1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sample-Bruxie-waffle-sandwich.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +70,10 @@
 			isa = PBXGroup;
 			children = (
 				0A148EFA1D8C05900031430B /* AppDelegate.swift */,
-				0A148EFC1D8C05900031430B /* ViewController.swift */,
+				0A148EFC1D8C05900031430B /* MainViewController.swift */,
 				0A148EFE1D8C05900031430B /* Main.storyboard */,
+				0A148F171D8C27C90031430B /* TreasureHuntViewController.swift */,
+				0A148F191D8C29180031430B /* MapPageViewController.swift */,
 				0A148F011D8C05900031430B /* Assets.xcassets */,
 				0A148F031D8C05900031430B /* LaunchScreen.storyboard */,
 				0A148F061D8C05900031430B /* Info.plist */,
@@ -76,6 +84,7 @@
 		0A148F0C1D8C115D0031430B /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				0A148F1B1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg */,
 				0A148F131D8C124D0031430B /* treasure-chest-closed-366952319.jpg */,
 				0A148F141D8C124D0031430B /* treasure-chest-open-366952319.jpg */,
 				0A148F0D1D8C119D0031430B /* BlackBeard.jpg */,
@@ -149,6 +158,7 @@
 				0A148F111D8C119D0031430B /* BlackBeard-inverted_colors.jpg in Resources */,
 				0A148F051D8C05900031430B /* LaunchScreen.storyboard in Resources */,
 				0A148F021D8C05900031430B /* Assets.xcassets in Resources */,
+				0A148F1C1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg in Resources */,
 				0A148F001D8C05900031430B /* Main.storyboard in Resources */,
 				0A148F151D8C124D0031430B /* treasure-chest-closed-366952319.jpg in Resources */,
 				0A148F161D8C124D0031430B /* treasure-chest-open-366952319.jpg in Resources */,
@@ -162,7 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A148EFD1D8C05900031430B /* ViewController.swift in Sources */,
+				0A148F1A1D8C29180031430B /* MapPageViewController.swift in Sources */,
+				0A148EFD1D8C05900031430B /* MainViewController.swift in Sources */,
+				0A148F181D8C27C90031430B /* TreasureHuntViewController.swift in Sources */,
 				0A148EFB1D8C05900031430B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
