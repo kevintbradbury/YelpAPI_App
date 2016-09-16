@@ -207,7 +207,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Blackbeard's Plunder" id="5DP-yu-whA">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Hzz-my-VrF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Hzz-my-VrF">
                             <color key="tintColor" red="1" green="0.95071308730000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -234,23 +234,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRb-NH-fco">
-                                <frame key="frameInset" minY="346" width="320" height="222"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8hY-OS-jpY"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRb-NH-fco">
+                                <frame key="frameInset" minY="356" width="320" height="222"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DUz-lL-wK7">
-                                        <rect key="frame" x="8" y="-56" width="304" height="206"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DUz-lL-wK7">
+                                        <rect key="frame" x="8" y="8" width="304" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Business name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkh-Zn-8D5">
                                                 <frame key="frameInset" minX="8" minY="8" width="149" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Business address City, State" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcH-UZ-X8I">
-                                                <frame key="frameInset" minX="8" minY="37" width="149" height="41"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -262,26 +258,38 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sample-Bruxie-waffle-sandwich.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="W5H-S9-4kp">
-                                                <frame key="frameInset" minX="165" minY="37" width="139" height="169"/>
+                                                <frame key="frameInset" minX="165" width="139" height="152"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Business address City, State" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcH-UZ-X8I">
+                                                <frame key="frameInset" minX="8" minY="37" width="149" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJh-ud-6P5">
+                                                <frame key="frameInset" minX="8" minY="115" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="📸"/>
+                                                <connections>
+                                                    <action selector="cameraButtonPressed:" destination="UGH-T4-xY8" eventType="touchUpInside" id="npK-h5-EgH"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfy-2P-Uoj">
+                                                <frame key="frameInset" minX="86" minY="115" width="71" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.62745098040000002" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="DUz-lL-wK7" secondAttribute="trailing" constant="8" id="996-uw-eNt"/>
-                                    <constraint firstItem="DUz-lL-wK7" firstAttribute="leading" secondItem="oRb-NH-fco" secondAttribute="leading" constant="8" id="JZ4-Gk-smq"/>
-                                    <constraint firstItem="DUz-lL-wK7" firstAttribute="top" secondItem="oRb-NH-fco" secondAttribute="top" constant="8" id="TD6-S1-NvU"/>
-                                </constraints>
                             </scrollView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8hY-OS-jpY"/>
                         </subviews>
                         <color key="backgroundColor" red="0.62745098040000002" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8hY-OS-jpY" firstAttribute="width" secondItem="0zK-1Y-hwm" secondAttribute="width" id="GUy-Oz-lBF"/>
-                            <constraint firstItem="Px1-Iz-Fvi" firstAttribute="top" secondItem="oRb-NH-fco" secondAttribute="bottom" constant="8" id="IEm-mz-5e5"/>
-                            <constraint firstItem="oRb-NH-fco" firstAttribute="top" secondItem="8hY-OS-jpY" secondAttribute="bottom" id="M9P-gY-zrh"/>
                             <constraint firstItem="8hY-OS-jpY" firstAttribute="height" secondItem="0zK-1Y-hwm" secondAttribute="height" multiplier="0.5" id="P5m-Ck-anV"/>
                             <constraint firstItem="8hY-OS-jpY" firstAttribute="top" secondItem="A43-F7-1RS" secondAttribute="bottom" id="fqc-Fp-Jr8"/>
                             <constraint firstAttribute="trailing" secondItem="8hY-OS-jpY" secondAttribute="trailing" id="wci-zh-GYE"/>
@@ -289,12 +297,33 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="HJh-ud-6P5" id="5Uv-Mf-INq"/>
                         <outlet property="mapView" destination="8hY-OS-jpY" id="1fd-La-xR3"/>
+                        <outlet property="restaurantePhoto" destination="W5H-S9-4kp" id="rDi-2M-NZy"/>
+                        <outlet property="takenPhoto" destination="sfy-2P-Uoj" id="7A4-Pt-rRh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGe-Rz-FPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3725.625" y="126.7605633802817"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qbO-lM-J1f">
+            <objects>
+                <viewController id="6Sd-MZ-jvT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BMi-ok-XUh"/>
+                        <viewControllerLayoutGuide type="bottom" id="fNv-ov-S88"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lr3-BT-las">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NEq-U0-38U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4635" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i8F-m5-kzG">
