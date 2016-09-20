@@ -234,73 +234,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8hY-OS-jpY"/>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRb-NH-fco">
-                                <frame key="frameInset" minY="356" width="320" height="222"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8hY-OS-jpY">
+                                <connections>
+                                    <outlet property="delegate" destination="UGH-T4-xY8" id="LlU-ci-UOw"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUz-lL-wK7">
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DUz-lL-wK7">
-                                        <rect key="frame" x="8" y="8" width="304" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRb-NH-fco">
+                                        <frame key="frameInset" minX="-8" minY="-10" width="320" height="462"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Business name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkh-Zn-8D5">
-                                                <frame key="frameInset" minX="8" minY="8" width="149" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Business name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-E2-nhT">
+                                                <rect key="frame" x="18" y="8" width="149" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIL-tZ-Mh9">
-                                                <frame key="frameInset" minX="8" minY="86" width="181" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Business address City, State" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hce-7h-elV">
+                                                <rect key="frame" x="18" y="87" width="149" height="41"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sample-Bruxie-waffle-sandwich.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="W5H-S9-4kp">
-                                                <frame key="frameInset" minX="165" width="139" height="152"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Business address City, State" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcH-UZ-X8I">
-                                                <frame key="frameInset" minX="8" minY="37" width="149" height="41"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJh-ud-6P5">
-                                                <frame key="frameInset" minX="8" minY="115" width="46" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imi-iA-M4u">
+                                                <rect key="frame" x="173" y="160" width="139" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <state key="normal" title="📸"/>
                                                 <connections>
-                                                    <action selector="cameraButtonPressed:" destination="UGH-T4-xY8" eventType="touchUpInside" id="npK-h5-EgH"/>
+                                                    <action selector="cameraButtonPressed:" destination="UGH-T4-xY8" eventType="touchUpInside" id="kyf-TW-4kw"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfy-2P-Uoj">
-                                                <frame key="frameInset" minX="86" minY="115" width="71" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvH-A3-076">
+                                                <rect key="frame" x="18" y="172" width="138" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Sample-Bruxie-waffle-sandwich.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="CXp-Zz-a7Z">
+                                                <rect key="frame" x="173" y="0.0" width="139" height="152"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2rY-iP-fty">
+                                                <rect key="frame" x="190" y="237" width="71" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="CXp-Zz-a7Z" secondAttribute="trailing" constant="8" id="6ar-Jl-f9Z"/>
+                                            <constraint firstItem="CXp-Zz-a7Z" firstAttribute="top" secondItem="oRb-NH-fco" secondAttribute="top" id="ozX-9j-yGa"/>
+                                        </constraints>
+                                    </scrollView>
                                 </subviews>
-                            </scrollView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oRb-NH-fco" firstAttribute="width" secondItem="DUz-lL-wK7" secondAttribute="width" id="YsV-d7-IWg"/>
+                                    <constraint firstAttribute="trailing" secondItem="oRb-NH-fco" secondAttribute="trailing" constant="2" id="f6p-2w-Urq"/>
+                                    <constraint firstItem="oRb-NH-fco" firstAttribute="leading" secondItem="DUz-lL-wK7" secondAttribute="leading" constant="-2" id="yRY-0C-6mp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.62745098040000002" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="8hY-OS-jpY" firstAttribute="width" secondItem="0zK-1Y-hwm" secondAttribute="width" id="GUy-Oz-lBF"/>
-                            <constraint firstItem="8hY-OS-jpY" firstAttribute="height" secondItem="0zK-1Y-hwm" secondAttribute="height" multiplier="0.5" id="P5m-Ck-anV"/>
-                            <constraint firstItem="8hY-OS-jpY" firstAttribute="top" secondItem="A43-F7-1RS" secondAttribute="bottom" id="fqc-Fp-Jr8"/>
-                            <constraint firstAttribute="trailing" secondItem="8hY-OS-jpY" secondAttribute="trailing" id="wci-zh-GYE"/>
-                            <constraint firstItem="8hY-OS-jpY" firstAttribute="leading" secondItem="0zK-1Y-hwm" secondAttribute="leading" id="xEH-q5-9aS"/>
+                            <constraint firstItem="8hY-OS-jpY" firstAttribute="leading" secondItem="0zK-1Y-hwm" secondAttribute="leading" id="38z-uV-Qpv"/>
+                            <constraint firstAttribute="width" secondItem="8hY-OS-jpY" secondAttribute="width" id="E0O-22-EKB"/>
+                            <constraint firstAttribute="trailing" secondItem="DUz-lL-wK7" secondAttribute="trailing" id="Hji-Td-rrJ"/>
+                            <constraint firstItem="Px1-Iz-Fvi" firstAttribute="top" secondItem="DUz-lL-wK7" secondAttribute="bottom" constant="10" id="OeD-ki-lOQ"/>
+                            <constraint firstItem="8hY-OS-jpY" firstAttribute="top" secondItem="A43-F7-1RS" secondAttribute="bottom" id="UsM-6F-pZl"/>
+                            <constraint firstItem="DUz-lL-wK7" firstAttribute="leading" secondItem="0zK-1Y-hwm" secondAttribute="leading" id="c7c-EB-WWC"/>
+                            <constraint firstItem="8hY-OS-jpY" firstAttribute="height" secondItem="0zK-1Y-hwm" secondAttribute="height" multiplier="0.5" id="coC-CV-kkX"/>
+                            <constraint firstItem="DUz-lL-wK7" firstAttribute="top" secondItem="8hY-OS-jpY" secondAttribute="bottom" constant="10" id="myR-lA-rYg"/>
+                            <constraint firstAttribute="trailing" secondItem="8hY-OS-jpY" secondAttribute="trailing" id="wRl-bf-jTz"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraButton" destination="HJh-ud-6P5" id="5Uv-Mf-INq"/>
                         <outlet property="mapView" destination="8hY-OS-jpY" id="1fd-La-xR3"/>
-                        <outlet property="restaurantePhoto" destination="W5H-S9-4kp" id="rDi-2M-NZy"/>
-                        <outlet property="takenPhoto" destination="sfy-2P-Uoj" id="7A4-Pt-rRh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGe-Rz-FPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
