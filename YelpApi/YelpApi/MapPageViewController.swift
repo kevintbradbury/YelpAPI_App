@@ -15,10 +15,7 @@ import Foundation
 class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var restaurantePhoto: UIImageView!
-    @IBOutlet weak var takenPhoto: UIImageView!
-    @IBOutlet weak var zoomIn: UIButton!
+    
     
     let locationManager = CLLocationManager()
     
@@ -40,18 +37,9 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         print(locationManager)
 
     }
+ 
     
-    @IBAction func zoomInPressed(_ sender: AnyObject) {
-    }
-    
-    @IBAction func cameraButtonPressed(_ sender: AnyObject) {
-        let picker = UIImagePickerController()
-        
-        picker.delegate = self
-        picker.sourceType = .camera
-        
-        present(picker, animated: true, completion: nil)
-   }
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

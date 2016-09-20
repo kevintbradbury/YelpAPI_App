@@ -19,6 +19,9 @@
 		0A148F181D8C27C90031430B /* TreasureHuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148F171D8C27C90031430B /* TreasureHuntViewController.swift */; };
 		0A148F1A1D8C29180031430B /* MapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148F191D8C29180031430B /* MapPageViewController.swift */; };
 		0A148F1C1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0A148F1B1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg */; };
+		0A1A963A1D91A1C800FF7D07 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A96391D91A1C800FF7D07 /* camera.png */; };
+		0A1A963E1D91A2C800FF7D07 /* camera-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A963D1D91A2C800FF7D07 /* camera-inverted.png */; };
+		0A1A96401D91A7F800FF7D07 /* MapViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A963F1D91A7F800FF7D07 /* MapViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		0A148F171D8C27C90031430B /* TreasureHuntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureHuntViewController.swift; sourceTree = "<group>"; };
 		0A148F191D8C29180031430B /* MapPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPageViewController.swift; sourceTree = "<group>"; };
 		0A148F1B1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sample-Bruxie-waffle-sandwich.jpeg"; sourceTree = "<group>"; };
+		0A1A96391D91A1C800FF7D07 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		0A1A963D1D91A2C800FF7D07 /* camera-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-inverted.png"; sourceTree = "<group>"; };
+		0A1A963F1D91A7F800FF7D07 /* MapViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 				0A148EFA1D8C05900031430B /* AppDelegate.swift */,
 				0A148EFC1D8C05900031430B /* MainViewController.swift */,
 				0A148EFE1D8C05900031430B /* Main.storyboard */,
+				0A1A963F1D91A7F800FF7D07 /* MapViewTableViewCell.swift */,
 				0A148F171D8C27C90031430B /* TreasureHuntViewController.swift */,
 				0A148F191D8C29180031430B /* MapPageViewController.swift */,
 				0A148F011D8C05900031430B /* Assets.xcassets */,
@@ -84,6 +91,8 @@
 		0A148F0C1D8C115D0031430B /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				0A1A963D1D91A2C800FF7D07 /* camera-inverted.png */,
+				0A1A96391D91A1C800FF7D07 /* camera.png */,
 				0A148F1B1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg */,
 				0A148F131D8C124D0031430B /* treasure-chest-closed-366952319.jpg */,
 				0A148F141D8C124D0031430B /* treasure-chest-open-366952319.jpg */,
@@ -158,10 +167,12 @@
 				0A148F111D8C119D0031430B /* BlackBeard-inverted_colors.jpg in Resources */,
 				0A148F051D8C05900031430B /* LaunchScreen.storyboard in Resources */,
 				0A148F021D8C05900031430B /* Assets.xcassets in Resources */,
+				0A1A963A1D91A1C800FF7D07 /* camera.png in Resources */,
 				0A148F1C1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg in Resources */,
 				0A148F001D8C05900031430B /* Main.storyboard in Resources */,
 				0A148F151D8C124D0031430B /* treasure-chest-closed-366952319.jpg in Resources */,
 				0A148F161D8C124D0031430B /* treasure-chest-open-366952319.jpg in Resources */,
+				0A1A963E1D91A2C800FF7D07 /* camera-inverted.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +186,7 @@
 				0A148F1A1D8C29180031430B /* MapPageViewController.swift in Sources */,
 				0A148EFD1D8C05900031430B /* MainViewController.swift in Sources */,
 				0A148F181D8C27C90031430B /* TreasureHuntViewController.swift in Sources */,
+				0A1A96401D91A7F800FF7D07 /* MapViewTableViewCell.swift in Sources */,
 				0A148EFB1D8C05900031430B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +351,7 @@
 				0A148F0B1D8C05900031430B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
