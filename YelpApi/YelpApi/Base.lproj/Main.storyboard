@@ -118,6 +118,9 @@
                                                     <state key="normal" title=" INCOMPLETE">
                                                         <color key="titleColor" red="1" green="0.95071308730000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="UGH-T4-xY8" kind="show" id="8zi-cI-06D"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -205,9 +208,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
-                        <outlet property="button2" destination="hqI-H0-ghw" id="NZX-ky-cWs"/>
-                        <outlet property="button3" destination="lFJ-e4-VVV" id="ZWo-ph-ucY"/>
-                        <outlet property="button4" destination="dnq-Sj-k7Q" id="LCb-vv-HSi"/>
+                        <outlet property="button2" destination="hqI-H0-ghw" id="yIt-F6-FwC"/>
+                        <outlet property="button3" destination="lFJ-e4-VVV" id="slH-1z-h7U"/>
+                        <outlet property="button4" destination="dnq-Sj-k7Q" id="Llk-2P-vZs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mM-6G-AVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,14 +236,14 @@
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUz-lL-wK7">
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="181" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-GC-tXF">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-GC-tXF">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="181" id="Og5-oU-qf9" customClass="MapViewTableViewCell" customModule="YelpApi" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="181"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="215" id="Og5-oU-qf9" customClass="MapViewTableViewCell" customModule="YelpApi" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="215"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Og5-oU-qf9" id="Vra-Fr-nXQ">
-                                                    <frame key="frameInset" width="375" height="180"/>
+                                                    <frame key="frameInset" width="375" height="214"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Business name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Peu-VY-4X2">
@@ -265,23 +268,48 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera-inverted.png" translatesAutoresizingMaskIntoConstraints="NO" id="o9S-zy-kyI">
-                                                            <frame key="frameInset" minX="8" minY="110" width="138" height="62"/>
+                                                            <frame key="frameInset" minX="5" minY="147" width="92" height="62"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGS-LE-3Sg">
-                                                            <frame key="frameInset" minX="54" minY="126" width="46" height="30"/>
+                                                            <frame key="frameInset" minX="28" minY="163" width="46" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="Button"/>
+                                                            <connections>
+                                                                <action selector="cameraButtonPressed:" destination="Og5-oU-qf9" eventType="touchUpInside" id="fM3-qq-xWl"/>
+                                                            </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YtR-39-dNU">
-                                                            <frame key="frameInset" minX="200" minY="8" width="167" height="164"/>
+                                                            <frame key="frameInset" minX="188" minY="8" width="179" height="176"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LV8-3Y-raz">
+                                                            <frame key="frameInset" minX="8" minY="115" width="71" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Rating #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWs-A9-7pU">
+                                                            <frame key="frameInset" minX="94" minY="115" width="71" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yelp-2c-outline.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bvw-83-Zta">
+                                                            <frame key="frameInset" minX="94" minY="153" width="86" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
+                                                    <outlet property="businessAddress" destination="pUm-Vf-Hxf" id="IdW-oZ-Rg7"/>
+                                                    <outlet property="businessName" destination="Peu-VY-4X2" id="Jo0-Nv-n6v"/>
                                                     <outlet property="cameraButton" destination="tGS-LE-3Sg" id="ACD-sZ-reg"/>
+                                                    <outlet property="foodPhoto" destination="YtR-39-dNU" id="aKM-wE-3aM"/>
+                                                    <outlet property="phoneNumber" destination="jdn-Od-Ht0" id="tC0-KH-xQR"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -312,6 +340,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="8hY-OS-jpY" id="abn-pI-9wF"/>
+                        <outlet property="yelpBusinessesTable" destination="RUj-GC-tXF" id="f2w-Mg-xU8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGe-Rz-FPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -359,5 +388,6 @@
         <image name="camera-inverted.png" width="700" height="700"/>
         <image name="treasure-chest-closed-366952319.jpg" width="214" height="237"/>
         <image name="treasure-chest-open-366952319.jpg" width="238" height="275"/>
+        <image name="yelp-2c-outline.png" width="675" height="383"/>
     </resources>
 </document>

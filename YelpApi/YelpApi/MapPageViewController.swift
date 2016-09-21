@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation
 import Foundation
 
-class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate,         UIImagePickerControllerDelegate, UITableViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -35,10 +35,31 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.mapView.showsUserLocation = true
         
         print(locationManager)
+        
+        apiCall()
 
     }
  
-    
+    func apiCall() {
+        
+        guard let url = URL(string: Yelp.apiLink)
+            else {
+                return
+        }
+        let session = URLSession.shared
+        func onComplete(data: Data?, response: URLResponse?, error: Error?) {
+            guard let data = data else { return }
+            let string = String(data:data, encoding: String.Encoding.utf8)
+            print("string from apicall: \(string)")
+        }
+        // dataTask calls the constant LET that was declared above in the API call
+        let task = session.dataTask(with: url, completionHandler: onComplete)
+        
+        print(url)
+        
+        task.resume()
+        
+    }
    
     
     override func didReceiveMemoryWarning() {
@@ -51,7 +72,7 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
         
         mapView.setRegion(region, animated: true)
         
@@ -69,10 +90,10 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
 //        
 //        ImageDisplay.image = info [UIImagePickerControllerOriginalImage] as? UIImage;
 //    }
-    
-
+    @IBOutlet weak var yelpBusinessesTable: UITableView!
 
 }
+
 
 
 

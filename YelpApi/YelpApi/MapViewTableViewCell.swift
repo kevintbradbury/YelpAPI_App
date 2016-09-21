@@ -12,16 +12,27 @@ import UIKit
 class MapViewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var foodPhoto: UIImageView!
+    @IBOutlet weak var businessName: UILabel!
+    @IBOutlet weak var businessAddress: UILabel!
+    @IBOutlet weak var phoneNumber: UILabel!
     
     
     
-//    let picker = UIImagePickerController()
-//    
-//    picker.delegate = self
-//    picker.sourceType = .camera
-//    
-//    present(picker, animated: true, completion: nil)
-//    
+    @IBAction func cameraButtonPressed(_ sender: AnyObject) {
+        
+//        let picker = UIImagePickerController()
+//        
+//            picker.delegate = self
+//            picker.sourceType = .camera
+//        
+//            present(picker, animated: true, completion: nil)
+//        
+    
+    }
+    
+    
+//
     
     
 }

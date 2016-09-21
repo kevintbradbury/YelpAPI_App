@@ -22,6 +22,10 @@
 		0A1A963A1D91A1C800FF7D07 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A96391D91A1C800FF7D07 /* camera.png */; };
 		0A1A963E1D91A2C800FF7D07 /* camera-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A963D1D91A2C800FF7D07 /* camera-inverted.png */; };
 		0A1A96401D91A7F800FF7D07 /* MapViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A963F1D91A7F800FF7D07 /* MapViewTableViewCell.swift */; };
+		0A1A96421D91AF3400FF7D07 /* YelpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A96411D91AF3400FF7D07 /* YelpData.swift */; };
+		0A1A96441D91B59D00FF7D07 /* yelp-white-bkgd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A96431D91B59D00FF7D07 /* yelp-white-bkgd.png */; };
+		0A1A96461D91B5C900FF7D07 /* yelp-2c-outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A96451D91B5C900FF7D07 /* yelp-2c-outline.png */; };
+		0A1A96481D92006E00FF7D07 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A96471D92006E00FF7D07 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		0A1A96391D91A1C800FF7D07 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		0A1A963D1D91A2C800FF7D07 /* camera-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-inverted.png"; sourceTree = "<group>"; };
 		0A1A963F1D91A7F800FF7D07 /* MapViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewTableViewCell.swift; sourceTree = "<group>"; };
+		0A1A96411D91AF3400FF7D07 /* YelpData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpData.swift; sourceTree = "<group>"; };
+		0A1A96431D91B59D00FF7D07 /* yelp-white-bkgd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yelp-white-bkgd.png"; sourceTree = "<group>"; };
+		0A1A96451D91B5C900FF7D07 /* yelp-2c-outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yelp-2c-outline.png"; sourceTree = "<group>"; };
+		0A1A96471D92006E00FF7D07 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +86,10 @@
 				0A148EFA1D8C05900031430B /* AppDelegate.swift */,
 				0A148EFC1D8C05900031430B /* MainViewController.swift */,
 				0A148EFE1D8C05900031430B /* Main.storyboard */,
+				0A1A96411D91AF3400FF7D07 /* YelpData.swift */,
 				0A1A963F1D91A7F800FF7D07 /* MapViewTableViewCell.swift */,
 				0A148F171D8C27C90031430B /* TreasureHuntViewController.swift */,
+				0A1A96471D92006E00FF7D07 /* TableViewController.swift */,
 				0A148F191D8C29180031430B /* MapPageViewController.swift */,
 				0A148F011D8C05900031430B /* Assets.xcassets */,
 				0A148F031D8C05900031430B /* LaunchScreen.storyboard */,
@@ -91,6 +101,8 @@
 		0A148F0C1D8C115D0031430B /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				0A1A96451D91B5C900FF7D07 /* yelp-2c-outline.png */,
+				0A1A96431D91B59D00FF7D07 /* yelp-white-bkgd.png */,
 				0A1A963D1D91A2C800FF7D07 /* camera-inverted.png */,
 				0A1A96391D91A1C800FF7D07 /* camera.png */,
 				0A148F1B1D8C32330031430B /* Sample-Bruxie-waffle-sandwich.jpeg */,
@@ -163,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1A96441D91B59D00FF7D07 /* yelp-white-bkgd.png in Resources */,
 				0A148F101D8C119D0031430B /* BlackBeard.jpg in Resources */,
 				0A148F111D8C119D0031430B /* BlackBeard-inverted_colors.jpg in Resources */,
 				0A148F051D8C05900031430B /* LaunchScreen.storyboard in Resources */,
@@ -173,6 +186,7 @@
 				0A148F151D8C124D0031430B /* treasure-chest-closed-366952319.jpg in Resources */,
 				0A148F161D8C124D0031430B /* treasure-chest-open-366952319.jpg in Resources */,
 				0A1A963E1D91A2C800FF7D07 /* camera-inverted.png in Resources */,
+				0A1A96461D91B5C900FF7D07 /* yelp-2c-outline.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A148F1A1D8C29180031430B /* MapPageViewController.swift in Sources */,
+				0A1A96481D92006E00FF7D07 /* TableViewController.swift in Sources */,
+				0A1A96421D91AF3400FF7D07 /* YelpData.swift in Sources */,
 				0A148EFD1D8C05900031430B /* MainViewController.swift in Sources */,
 				0A148F181D8C27C90031430B /* TreasureHuntViewController.swift in Sources */,
 				0A1A96401D91A7F800FF7D07 /* MapViewTableViewCell.swift in Sources */,
