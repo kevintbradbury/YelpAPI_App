@@ -16,7 +16,7 @@ class MapViewTableViewCell: UITableViewCell {
     @IBOutlet weak var businessName: UILabel!
     @IBOutlet weak var businessAddress: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
-    
+    @IBOutlet weak var cellOutlet: UIView!
     
     
     @IBAction func cameraButtonPressed(_ sender: AnyObject) {

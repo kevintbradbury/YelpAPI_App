@@ -13,7 +13,7 @@ typealias Callback = (UIImage?) -> ()
 
 class Yelp {
     
-    static let apiLink = "https://api.yelp.com/v3/businesses/search?term=spicy+food&latitude=37.786882&longitude=-122.399972"
+    static let apiLink = "https://api.yelp.com/oauth2/token"
     
     private var apiToken: String?
     
@@ -84,7 +84,7 @@ class Yelp {
             let yelpObjects = dataArray
                 .filter() { $0 is NSDictionary }
                 .map() { $0 as! NSDictionary }
-                .map(YelpDataObject.fromJson)
+                .map(YelpDataItem.fromjson)
                 .filter() { $0 != nil }
                 .map() { $0! }
             
@@ -94,37 +94,16 @@ class Yelp {
                 return
             }
             
-//            if let image = oneImageFrom(yelpObjects: yelpObjects) {
-//                exitWithImage(image: image)
-//            }
-//            else {
-//                exitWithoutImage()
-//            }
         }
         
     }
 
-//    private static func oneImageFrom(yelpObjects: [YelpDataObject]) -> UIImage? {
-//        
-//        let oneObject = yelpObjects
-//        
-//        let imageUrl = oneObject.image.url
-//        
-//        do {
-//            let data = try Data(contentsOf: imageUrl)
-//            return UIImage(data: data)
-//        }
-//        catch let ex {
-//            print("Failed to load Image from URL: \(imageUrl) : \(ex)")
-//            return nil
-//        }
-//    }
     
 }
 
-let YelpTokenRequest = ["grant_type" : "client_credentials",
-                        "client_id": "ih_D0tv9FsD5dR1Gx6K17Q",
-                        "client_secret" : "8RYrEyosCCVLXospGDXsqPxqPZx95lAJvShqNkHiekfG0EtwOSLCv4NzKXx2aMb7"]
+let YelpTokenAccess = ["access_token" : "XT-cgvuAYuopiCBZfTktylJweQmBcaHksb2mEwMpSG7ZBfWdWmcmWtOwEiyCAJBjTL7_hMFoT4Np976vktSLBVcSZy7nVoDOA4cH1Fl7fEnGADkjhEWInXEMhdXhV3Yx",
+    "token_type": "Bearer",
+    "expires_in": 15551999] as [String : Any]
 
 fileprivate struct YelpTokenReceived {
     let access_token: String
@@ -166,37 +145,53 @@ fileprivate struct YelpImage {
         }
     }
 
-fileprivate struct YelpDataObject {
+struct YelpDataItem {
     
-    let type: String
+    let rating: String
+    let price: String
+    let phone: String
     let id: String
-    let slug: String
+    let review_count: String
+    let name: String
     let url: URL
-    let source: URL
-    let image: YelpImage
+    let image_url: URL
     
-    static func fromJson(json: NSDictionary) -> YelpDataObject? {
-        
-        guard let type = json["type"] as? String,
-            let id = json["id"] as? String,
-            let slug = json["slug"] as? String,
-            let urlString = json["url"] as? String, let url = URL(string: urlString),
-            let sourceString = json["source"] as? String, let source = URL(string: sourceString),
-            let imagesObject = json["images"] as? NSDictionary,
-            let imageObject = imagesObject["fixed_height"] as? NSDictionary
+    static func fromjson(dictionary: NSDictionary) -> YelpDataItem? {
+        guard let rating = dictionary["rating"] as? String,
+            let price = dictionary["price"] as? String,
+            let phone = dictionary["phone"] as? String,
+            let id = dictionary["id"] as? String,
+            let review_count = dictionary["review_count"] as? String,
+            let name = dictionary["name"] as? String,
+            let url = dictionary["url"] as? URL,
+            let image_url = dictionary["image_url"] as? URL
             else {
                 return nil
         }
-        
-        guard let yelpImage = YelpImage.fromJson(json: imageObject)
-            else {
-                print("Could not parse Yelp Image")
-                return nil
-        }
-        
-        return YelpDataObject(type: type, id: id, slug: slug, url: url, source: source, image: yelpImage)
-    
-        }
+        return YelpDataItem(rating: rating, price: price, phone: phone, id: id, review_count: review_count, name: name, url: url, image_url: image_url)
     }
+}
 
+
+//
+//struct yelpBusinessAddress {
+//    let location: Dictionary = [
+//        city: String,
+//        country: String,
+//        address2: String,
+//        address3: String,
+//        state: String,
+//        address1: String,
+//        zip_code: Int
+//    ]
+//
+//}
+//
+//struct businessCoordinates {
+//    let coordinates: Dictionary = [
+//        latitude: Double,
+//        longitude: Double
+//    ]
+//
+//}
 

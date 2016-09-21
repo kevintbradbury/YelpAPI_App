@@ -12,9 +12,10 @@ import MapKit
 import CoreLocation
 import Foundation
 
-class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate,         UIImagePickerControllerDelegate, UITableViewDelegate {
+class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var mapView: MKMapView!
+    
     
     
     let locationManager = CLLocationManager()
@@ -34,37 +35,101 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         self.mapView.showsUserLocation = true
         
-        print(locationManager)
-        
         apiCall()
-
+        
     }
+    
+    var emptyString: String = ""
+    
+  //  var yelpBusinessImages: [UIImage] = []
+    
+    private let mainOperation = OperationQueue.main
+    
+      @IBOutlet weak var yelpBusinessesTable: UITableView!
  
+    var yelpBusiness = [YelpDataItem]()
+    
     func apiCall() {
         
-        guard let url = URL(string: Yelp.apiLink)
-            else {
-                return
-        }
+        emptyString = "https://api.yelp.com/v3/businesses/search?term=pizza&latitude=37.786882&longitude=-122.399972"
+        
+        let url = URL(string: emptyString)!
+        
+        var request = URLRequest.init(url: url)
+        
+        request.setValue("Bearer XT-cgvuAYuopiCBZfTktylJweQmBcaHksb2mEwMpSG7ZBfWdWmcmWtOwEiyCAJBjTL7_hMFoT4Np976vktSLBVcSZy7nVoDOA4cH1Fl7fEnGADkjhEWInXEMhdXhV3Yx", forHTTPHeaderField: "Authorization")
+        
         let session = URLSession.shared
-        func onComplete(data: Data?, response: URLResponse?, error: Error?) {
-            guard let data = data else { return }
-            let string = String(data:data, encoding: String.Encoding.utf8)
-            print("string from apicall: \(string)")
+        
+        let dataTask = session.dataTask(with: request) {(data, response, error) -> Void in
+            
+            guard let moreData = data else { return }
+            guard let someObject = try? JSONSerialization.jsonObject(with: moreData, options: []) as! NSDictionary else { return }
+            guard let array = someObject["businesses"] as? NSArray else { return }
+            print("array COUNT: \(array.count)")
+            for i in array {
+                
+                guard let dictionary = i as? NSDictionary else { print ("nil dictionary") ; continue }
+            
+                print(dictionary)
+                
+                guard let yelpDictionary = YelpDataItem.fromjson(dictionary: dictionary) else { return }
+
+//                guard let newData = try? Data(contentsOf: yelpBusiness.image_url) else { return }
+//
+                self.yelpBusiness.append(yelpDictionary)
+                
+//              print("NEW DATA: \(newData)")
+            }
+            print(array)
+            
+            self.mainOperation.addOperation {
+                self.yelpBusinessesTable.reloadData()
+            }
+            
         }
-        // dataTask calls the constant LET that was declared above in the API call
-        let task = session.dataTask(with: url, completionHandler: onComplete)
-        
-        print(url)
-        
-        task.resume()
+
+        dataTask.resume()
         
     }
+    
+    
+    
+    
+//        func onComplete(data: Data?, response: URLResponse?, error: Error?) {
+//            guard let data = data else { return }
+//            let string = String(data:data, encoding: String.Encoding.utf8)
+//            print("string from apicall: \(string)")
+//        }
+//        // dataTask calls the constant LET that was declared above in the API call
+//        let task = session.dataTask(with: url, completionHandler: onComplete)
+//        
+//        print(url)
+//        
+//        task.resume()
+//        
+//    }
    
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return yelpBusiness.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MapViewTableViewCell else { return UITableViewCell() }
+        
+        let yelpData = yelpBusiness[indexPath.row]
+        cell.businessName.text = yelpData.name
+        cell.
+        
+        
+        return cell
+    }
+
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -90,7 +155,7 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
 //        
 //        ImageDisplay.image = info [UIImagePickerControllerOriginalImage] as? UIImage;
 //    }
-    @IBOutlet weak var yelpBusinessesTable: UITableView!
+
 
 }
 
