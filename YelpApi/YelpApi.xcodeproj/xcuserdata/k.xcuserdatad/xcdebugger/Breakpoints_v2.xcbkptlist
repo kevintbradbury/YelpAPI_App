@@ -6,32 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpApi/YelpData.swift"
-            timestampString = "496106605.848118"
+            timestampString = "496204538.122514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "loadSearchResults(for:withCallback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YelpApi/YelpData.swift"
-            timestampString = "496106605.848118"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "searchForInfo(withTerm:onDone:)"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "fromjson(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YelpApi/MapPageViewController.swift"
-            timestampString = "496187529.106121"
+            filePath = "YelpApi/YelpData.swift"
+            timestampString = "496194755.129721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "apiCall()"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "fromjson(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

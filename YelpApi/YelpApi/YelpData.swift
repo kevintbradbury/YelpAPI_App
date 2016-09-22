@@ -147,28 +147,27 @@ fileprivate struct YelpImage {
 
 struct YelpDataItem {
     
-    let rating: String
-    let price: String
-    let phone: String
-    let id: String
-    let review_count: String
-    let name: String
-    let url: URL
-    let image_url: URL
+    var url: URL
+    var rating: Double
+    var price: String
+    var phone: String
+    var id: String
+    var review_count: Int
+    var name: String
     
     static func fromjson(dictionary: NSDictionary) -> YelpDataItem? {
-        guard let rating = dictionary["rating"] as? String,
+        guard let imageUrl = dictionary["image_url"] as? String,
+            let rating = dictionary["rating"] as? Double,
             let price = dictionary["price"] as? String,
             let phone = dictionary["phone"] as? String,
             let id = dictionary["id"] as? String,
-            let review_count = dictionary["review_count"] as? String,
-            let name = dictionary["name"] as? String,
-            let url = dictionary["url"] as? URL,
-            let image_url = dictionary["image_url"] as? URL
-            else {
+            let review_count = dictionary["review_count"] as? Int,
+            let name = dictionary["name"] as? String else {
+                print("Guard failed on fromJson()")
                 return nil
         }
-        return YelpDataItem(rating: rating, price: price, phone: phone, id: id, review_count: review_count, name: name, url: url, image_url: image_url)
+        guard let url = URL(string: imageUrl) else { return nil }
+        return YelpDataItem(url: url, rating: rating, price: price, phone: phone, id: id, review_count: review_count, name: name)
     }
 }
 

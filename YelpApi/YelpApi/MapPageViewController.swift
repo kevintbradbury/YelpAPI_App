@@ -64,24 +64,34 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let dataTask = session.dataTask(with: request) {(data, response, error) -> Void in
             
             guard let moreData = data else { return }
+            
             guard let someObject = try? JSONSerialization.jsonObject(with: moreData, options: []) as! NSDictionary else { return }
+           
+
+            
             guard let array = someObject["businesses"] as? NSArray else { return }
+            //print(array)
+            
+            //            print("****\n\(someObject)\n****")
             print("array COUNT: \(array.count)")
+            
             for i in array {
                 
-                guard let dictionary = i as? NSDictionary else { print ("nil dictionary") ; continue }
+                guard let dictionary = i as? NSDictionary else { return }
             
                 print(dictionary)
-                
-                guard let yelpDictionary = YelpDataItem.fromjson(dictionary: dictionary) else { return }
 
-//                guard let newData = try? Data(contentsOf: yelpBusiness.image_url) else { return }
+                guard let yelpDictionary = YelpDataItem.fromjson(dictionary: dictionary) else {
+                    print("error in guard")
+                    return }
 //
-                self.yelpBusiness.append(yelpDictionary)
+////                guard let newData = try? Data(contentsOf: yelpDictionary.url) else { return }
+//
+//                self.yelpBusiness.append(yelpDictionary)
                 
 //              print("NEW DATA: \(newData)")
             }
-            print(array)
+            
             
             self.mainOperation.addOperation {
                 self.yelpBusinessesTable.reloadData()
@@ -109,27 +119,6 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
 //        task.resume()
 //        
 //    }
-   
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return yelpBusiness.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MapViewTableViewCell else { return UITableViewCell() }
-        
-        let yelpData = yelpBusiness[indexPath.row]
-        cell.businessName.text = yelpData.name
-        cell.
-        
-        
-        return cell
-    }
-
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -150,6 +139,24 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return yelpBusiness.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MapViewTableViewCell else { return UITableViewCell() }
+        
+        let yelpData = yelpBusiness[indexPath.row]
+        cell.businessName.text = yelpData.name
+        cell.phoneNumber.text = yelpData.phone
+        
+        return cell
+    }
 
 //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 //        
