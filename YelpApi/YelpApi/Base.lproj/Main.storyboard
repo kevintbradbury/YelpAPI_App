@@ -27,8 +27,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6G-EW-gwP">
-                                <frame key="frameInset" minX="109" minY="378" width="108" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6G-EW-gwP">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="START!">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,7 +76,7 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GLb-a0-Fwo" id="6fR-ND-X9v">
-                                            <frame key="frameInset" width="375" height="77"/>
+                                            <frame key="frameInset" width="375" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 1. Find the weirdest drink on the menu." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfm-xb-exm">
@@ -95,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="141" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zGH-eF-6Jm" id="Abf-us-mru">
-                                            <frame key="frameInset" width="375" height="83"/>
+                                            <frame key="frameInset" width="375" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 2. Try the spiciest thing on the menu." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwC-Dr-WpC">
@@ -120,7 +119,7 @@
                                                         <color key="titleColor" red="1" green="0.95071308730000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="UGH-T4-xY8" kind="show" id="8zi-cI-06D"/>
+                                                        <segue destination="UGH-T4-xY8" kind="show" id="Xi3-s8-bwL"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -131,7 +130,7 @@
                                         <rect key="frame" x="0.0" y="224" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ASU-Tr-2nv" id="oGA-WR-mJW">
-                                            <frame key="frameInset" width="375" height="91"/>
+                                            <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 3. Share dessert with a stranger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AV1-L1-SmS">
@@ -164,7 +163,7 @@
                                         <rect key="frame" x="0.0" y="315" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8X-bL-hfd" id="gYD-DW-JDz">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 4. Thumb wrestle a server." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUL-hN-AHd">
@@ -235,7 +234,7 @@
                                     <outlet property="delegate" destination="UGH-T4-xY8" id="LlU-ci-UOw"/>
                                 </connections>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-GC-tXF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-GC-tXF" userLabel="yelpBizTable">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="215" id="Og5-oU-qf9" customClass="MapViewTableViewCell" customModule="YelpApi" customModuleProvider="target">
@@ -274,9 +273,6 @@
                                                     <frame key="frameInset" minX="28" minY="163" width="46" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="cameraButtonPressed:" destination="Og5-oU-qf9" eventType="touchUpInside" id="fM3-qq-xWl"/>
-                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YtR-39-dNU">
                                                     <frame key="frameInset" minX="188" minY="8" width="179" height="176"/>
@@ -304,18 +300,18 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="businessAddress" destination="pUm-Vf-Hxf" id="IdW-oZ-Rg7"/>
-                                            <outlet property="businessName" destination="Peu-VY-4X2" id="Jo0-Nv-n6v"/>
-                                            <outlet property="cameraButton" destination="tGS-LE-3Sg" id="ACD-sZ-reg"/>
-                                            <outlet property="foodPhoto" destination="YtR-39-dNU" id="aKM-wE-3aM"/>
-                                            <outlet property="phoneNumber" destination="jdn-Od-Ht0" id="tC0-KH-xQR"/>
+                                            <outlet property="bizAddressLabel" destination="pUm-Vf-Hxf" id="eQF-gh-ub2"/>
+                                            <outlet property="bizNameLabel" destination="Peu-VY-4X2" id="6sM-4s-Fmy"/>
+                                            <outlet property="bizPhoneLabel" destination="jdn-Od-Ht0" id="huA-4e-1Ic"/>
+                                            <outlet property="bizPhoto" destination="YtR-39-dNU" id="bba-uD-Ijv"/>
+                                            <outlet property="bizRatingNumberLabel" destination="EWs-A9-7pU" id="i9x-xM-doI"/>
+                                            <outlet property="cameraButton" destination="tGS-LE-3Sg" id="5Kn-nm-3ph"/>
+                                            <outlet property="cameraIcon" destination="o9S-zy-kyI" id="YH4-24-VgH"/>
+                                            <outlet property="tableCellContentView" destination="Vra-Fr-nXQ" id="kyq-R2-Fc9"/>
+                                            <outlet property="yelpLogo" destination="Bvw-83-Zta" id="BOd-XG-PoL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="UGH-T4-xY8" id="Mex-Mz-lQj"/>
-                                    <outlet property="delegate" destination="UGH-T4-xY8" id="C2b-fW-XhC"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.15228365390000001" green="0.15228365390000001" blue="0.15228365390000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -334,30 +330,12 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="8hY-OS-jpY" id="abn-pI-9wF"/>
-                        <outlet property="yelpBusinessesTable" destination="RUj-GC-tXF" id="pkr-0R-7aV"/>
+                        <outlet property="yelpBizTable" destination="RUj-GC-tXF" id="IPq-mw-Sfy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGe-Rz-FPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3725.5999999999999" y="126.38680659670166"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="qbO-lM-J1f">
-            <objects>
-                <viewController id="6Sd-MZ-jvT" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BMi-ok-XUh"/>
-                        <viewControllerLayoutGuide type="bottom" id="fNv-ov-S88"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lr3-BT-las">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NEq-U0-38U" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4635" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i8F-m5-kzG">

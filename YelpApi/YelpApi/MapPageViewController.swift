@@ -15,13 +15,15 @@ import Foundation
 class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var mapView: MKMapView!
-    
-    
+    @IBOutlet weak var yelpBizTable: UITableView!
     
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        yelpBizTable.delegate = self
+        yelpBizTable.dataSource = self
         
         mapView.delegate = self
         
@@ -45,7 +47,7 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     private let mainOperation = OperationQueue.main
     
-      @IBOutlet weak var yelpBusinessesTable: UITableView!
+    
  
     var yelpBusiness = [YelpDataItem]()
     
@@ -65,36 +67,29 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             
             guard let moreData = data else { return }
             
-            guard let someObject = try? JSONSerialization.jsonObject(with: moreData, options: []) as! NSDictionary else { return }
-           
-
+            guard let someObject = (try? JSONSerialization.jsonObject(with: moreData, options: [])) as? NSDictionary else { return }
             
-            guard let array = someObject["businesses"] as? NSArray else { return }
+            guard let array = (someObject["businesses"]) as? NSArray else { return }
             //print(array)
             
             //            print("****\n\(someObject)\n****")
-            print("array COUNT: \(array.count)")
+        //    print("array COUNT: \(array.count)")
             
             for i in array {
                 
-                guard let dictionary = i as? NSDictionary else { return }
-            
-                print(dictionary)
-
+                guard let dictionary = i as? NSDictionary else { continue }
+                
                 guard let yelpDictionary = YelpDataItem.fromjson(dictionary: dictionary) else {
                     print("error in guard")
                     return }
-//
-////                guard let newData = try? Data(contentsOf: yelpDictionary.url) else { return }
-//
-//                self.yelpBusiness.append(yelpDictionary)
+
+                self.yelpBusiness.append(yelpDictionary)
                 
-//              print("NEW DATA: \(newData)")
             }
             
             
             self.mainOperation.addOperation {
-                self.yelpBusinessesTable.reloadData()
+                self.yelpBizTable.reloadData()
             }
             
         }
@@ -138,6 +133,9 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         print("Errors" + error.localizedDescription)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -148,15 +146,17 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        print("yelp business count - \(yelpBusiness.count)")
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MapViewTableViewCell else { return UITableViewCell() }
         
         let yelpData = yelpBusiness[indexPath.row]
-        cell.businessName.text = yelpData.name
-        cell.phoneNumber.text = yelpData.phone
+        print("yelpData: \(yelpData)")
+        cell.bizNameLabel.text = yelpData.name
+        cell.bizPhoneLabel.text = yelpData.phone
         
         return cell
     }
+    
 
 //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 //        
