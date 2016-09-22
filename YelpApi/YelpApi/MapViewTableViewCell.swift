@@ -20,6 +20,16 @@ class MapViewTableViewCell: UITableViewCell {
     @IBOutlet weak var cameraIcon: UIImageView!
     @IBOutlet weak var yelpLogo: UIImageView!
     @IBOutlet weak var tableCellContentView: UIView!
+    @IBOutlet weak var yelpLogoButton: UIButton!
     
+    @IBOutlet weak var labelToURL: UILabel!
     
+    @IBAction func yelpLogoButtonPressed(_ sender: AnyObject) {
+       // Business Yelp URL here
+    }
+    
+
+  
+
+
 }

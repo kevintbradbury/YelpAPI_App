@@ -46,14 +46,14 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
   //  var yelpBusinessImages: [UIImage] = []
     
     private let mainOperation = OperationQueue.main
-    
-    
  
     var yelpBusiness = [YelpDataItem]()
     
+    var yelpImages: [UIImage] = []
+    
     func apiCall() {
         
-        emptyString = "https://api.yelp.com/v3/businesses/search?term=pizza&latitude=37.786882&longitude=-122.399972"
+        emptyString = "https://api.yelp.com/v3/businesses/search?term=spicy&latitude=37.786882&longitude=-122.399972"
         
         let url = URL(string: emptyString)!
         
@@ -70,10 +70,6 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             guard let someObject = (try? JSONSerialization.jsonObject(with: moreData, options: [])) as? NSDictionary else { return }
             
             guard let array = (someObject["businesses"]) as? NSArray else { return }
-            //print(array)
-            
-            //            print("****\n\(someObject)\n****")
-        //    print("array COUNT: \(array.count)")
             
             for i in array {
                 
@@ -82,9 +78,12 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 guard let yelpDictionary = YelpDataItem.fromjson(dictionary: dictionary) else {
                     print("error in guard")
                     return }
-
+                
+                guard let newData = try? Data(contentsOf: yelpDictionary.url) else {return}
+                
                 self.yelpBusiness.append(yelpDictionary)
                 
+                self.yelpImages.append(UIImage(data: newData)!)
             }
             
             
@@ -97,23 +96,6 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         dataTask.resume()
         
     }
-    
-    
-    
-    
-//        func onComplete(data: Data?, response: URLResponse?, error: Error?) {
-//            guard let data = data else { return }
-//            let string = String(data:data, encoding: String.Encoding.utf8)
-//            print("string from apicall: \(string)")
-//        }
-//        // dataTask calls the constant LET that was declared above in the API call
-//        let task = session.dataTask(with: url, completionHandler: onComplete)
-//        
-//        print(url)
-//        
-//        task.resume()
-//        
-//    }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -134,7 +116,8 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        
+        return 200
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -153,6 +136,13 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         print("yelpData: \(yelpData)")
         cell.bizNameLabel.text = yelpData.name
         cell.bizPhoneLabel.text = yelpData.phone
+
+        let ratingAsAstring = "\(yelpData.rating)"
+        cell.bizRatingNumberLabel.text = ratingAsAstring
+        
+        cell.bizPhoto.image = yelpImages[indexPath.row]
+        
+//        let urlAsAString = "
         
         return cell
     }

@@ -17,12 +17,14 @@ class Yelp {
     
     private var apiToken: String?
     
-    static var keyword: String = "spicy food"
+    static var keyword: String = ""
     
     static let searchWords = apiLink
     
 //    private let apiKey: 
 
+    var imageArray: [UIImage] = []
+    
     private static let async: OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
@@ -31,7 +33,7 @@ class Yelp {
 
     private static let main = OperationQueue.main
     
-    static func searchForInfo(withTerm term: String, onDone callback: @escaping Callback) {
+    static func searchForImages(withTerm term: String, onDone callback: @escaping Callback) {
         
         guard let url = createUrlFor(searchTerm: term)
             else {
@@ -41,20 +43,20 @@ class Yelp {
         
         async.maxConcurrentOperationCount = 1
         
-        loadSearchResults(for: url, withCallback: callback)
-        print(loadSearchResults(for: url, withCallback: callback))
+        loadImages(for: url, withCallback: callback)
+        print(loadImages(for: url, withCallback: callback))
     }
     
     private static func createUrlFor(searchTerm term: String?) -> URL? {
         
      //   guard let escapedTerm = term else { return nil }
         
-        let link = "https://api.yelp.com/v3/businesses/search?term=spicy+food&latitude=37.786882&longitude=-122.399972"
+        guard let link = term else { return nil }
         
         return URL(string: link)
     }
 
-    private static func loadSearchResults(for url: URL, withCallback callback: @escaping Callback) {
+    private static func loadImages(for url: URL, withCallback callback: @escaping Callback) {
         
         func exitWithImage(image: UIImage) {
             
