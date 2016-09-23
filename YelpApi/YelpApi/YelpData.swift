@@ -174,19 +174,27 @@ struct YelpDataItem {
 }
 
 
-//
-//struct yelpBusinessAddress {
-//    let location: Dictionary = [
-//        city: String,
-//        country: String,
-//        address2: String,
-//        address3: String,
-//        state: String,
-//        address1: String,
-//        zip_code: Int
-//    ]
-//
-//}
+
+struct location {
+    let city: String
+    let country: String
+    let state: String
+    let address1: String
+    let zip_code: Int
+    
+    static func fromjson(dictionary: NSDictionary) -> location? {
+        guard let city = dictionary["city"] as? String,
+            let country = dictionary["country"] as? String,
+            let state = dictionary["state"] as? String,
+            let address1 = dictionary["address1"] as? String,
+            let zip_code = dictionary["zip_code"] as? Int else {
+                return nil
+        }
+        return location(city: city, country: country, state: state, address1: address1, zip_code: zip_code)
+}
+
+    
+
 //
 //struct businessCoordinates {
 //    let coordinates: Dictionary = [
@@ -196,3 +204,4 @@ struct YelpDataItem {
 //
 //}
 
+}

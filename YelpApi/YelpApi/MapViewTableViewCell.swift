@@ -16,16 +16,23 @@ class MapViewTableViewCell: UITableViewCell {
     @IBOutlet weak var bizAddressLabel: UILabel!
     @IBOutlet weak var bizPhoneLabel: UILabel!
     @IBOutlet weak var bizRatingNumberLabel: UILabel!
-    @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var cameraIcon: UIImageView!
     @IBOutlet weak var yelpLogo: UIImageView!
     @IBOutlet weak var tableCellContentView: UIView!
     @IBOutlet weak var yelpLogoButton: UIButton!
-    
-    @IBOutlet weak var labelToURL: UILabel!
+    @IBOutlet weak var bizIDLabel: UILabel!
     
     @IBAction func yelpLogoButtonPressed(_ sender: AnyObject) {
-       // Business Yelp URL here
+        let yelpBiz = "https://www.yelp.com/biz/"
+        
+        let id: String! = bizIDLabel.text
+
+        let bizIDurl = yelpBiz + id!
+        
+        print(bizIDurl)
+        
+        if let url = NSURL(string: bizIDurl) {
+            UIApplication.shared.openURL(url as URL)
+        }
     }
     
 

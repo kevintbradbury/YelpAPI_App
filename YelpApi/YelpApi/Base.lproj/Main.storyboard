@@ -76,7 +76,7 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GLb-a0-Fwo" id="6fR-ND-X9v">
-                                            <frame key="frameInset" width="375" height="76"/>
+                                            <frame key="frameInset" width="375" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 1. Find the weirdest drink on the menu." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfm-xb-exm">
@@ -94,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="141" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zGH-eF-6Jm" id="Abf-us-mru">
-                                            <frame key="frameInset" width="375" height="82"/>
+                                            <frame key="frameInset" width="375" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 2. Try the spiciest thing on the menu." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwC-Dr-WpC">
@@ -130,7 +130,7 @@
                                         <rect key="frame" x="0.0" y="224" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ASU-Tr-2nv" id="oGA-WR-mJW">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="375" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 3. Share dessert with a stranger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AV1-L1-SmS">
@@ -163,7 +163,7 @@
                                         <rect key="frame" x="0.0" y="315" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8X-bL-hfd" id="gYD-DW-JDz">
-                                            <frame key="frameInset" width="375" height="79"/>
+                                            <frame key="frameInset" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 4. Thumb wrestle a server." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUL-hN-AHd">
@@ -229,19 +229,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fcZ-Rc-QJJ">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rRp-xR-NV4">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="A3q-RA-D0I"/>
+                                            <constraint firstAttribute="height" constant="50" id="WQ7-S6-HfI"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8hY-OS-jpY">
                                 <connections>
                                     <outlet property="delegate" destination="UGH-T4-xY8" id="LlU-ci-UOw"/>
                                 </connections>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-GC-tXF" userLabel="yelpBizTable">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="197" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-GC-tXF" userLabel="yelpBizTable">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="215" id="Og5-oU-qf9" customClass="MapViewTableViewCell" customModule="YelpApi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="215"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="197" id="Og5-oU-qf9" customClass="MapViewTableViewCell" customModule="YelpApi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="197"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Og5-oU-qf9" id="Vra-Fr-nXQ">
-                                            <frame key="frameInset" width="375" height="214"/>
+                                            <frame key="frameInset" width="375" height="196"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Peu-VY-4X2">
@@ -301,13 +311,15 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3N2-TA-bjK">
-                                                    <state key="normal" title="yelpButton"/>
+                                                    <state key="normal" title="yelpButton">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="yelpLogoButtonPressed:" destination="Og5-oU-qf9" eventType="touchUpInside" id="ox1-iI-tZO"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LabelToURL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUC-jt-7Cb">
-                                                    <frame key="frameInset" minX="8" minY="185" width="71" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxp-oU-MOK">
+                                                    <frame key="frameInset" minX="21" minY="36" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -341,6 +353,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="bizAddressLabel" destination="pUm-Vf-Hxf" id="eQF-gh-ub2"/>
+                                            <outlet property="bizIDLabel" destination="Lxp-oU-MOK" id="vSY-CX-R70"/>
                                             <outlet property="bizNameLabel" destination="Peu-VY-4X2" id="6sM-4s-Fmy"/>
                                             <outlet property="bizPhoneLabel" destination="jdn-Od-Ht0" id="huA-4e-1Ic"/>
                                             <outlet property="bizPhoto" destination="YtR-39-dNU" id="bba-uD-Ijv"/>
@@ -353,8 +366,9 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15228365390000001" green="0.15228365390000001" blue="0.15228365390000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fcZ-Rc-QJJ" firstAttribute="centerX" secondItem="0zK-1Y-hwm" secondAttribute="centerX" id="95y-aP-PjW"/>
                             <constraint firstAttribute="width" secondItem="8hY-OS-jpY" secondAttribute="width" id="E0O-22-EKB"/>
                             <constraint firstItem="8hY-OS-jpY" firstAttribute="top" secondItem="A43-F7-1RS" secondAttribute="bottom" constant="1" id="ELb-dW-2UX"/>
                             <constraint firstAttribute="bottom" secondItem="RUj-GC-tXF" secondAttribute="bottom" id="JdF-RL-ZBi"/>
@@ -366,10 +380,28 @@
                             <constraint firstItem="RUj-GC-tXF" firstAttribute="height" secondItem="8hY-OS-jpY" secondAttribute="height" id="kGA-I6-4Ux"/>
                             <constraint firstItem="RUj-GC-tXF" firstAttribute="top" secondItem="8hY-OS-jpY" secondAttribute="bottom" constant="10" id="lZ4-K4-hNG"/>
                             <constraint firstAttribute="trailing" secondItem="RUj-GC-tXF" secondAttribute="trailing" id="mfU-YV-ngu"/>
+                            <constraint firstItem="fcZ-Rc-QJJ" firstAttribute="centerY" secondItem="0zK-1Y-hwm" secondAttribute="centerY" id="ti3-cE-LUn"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="06n-nc-wKh">
+                        <barButtonItem key="leftBarButtonItem" title="Photo Library" id="oTR-5D-slg">
+                            <connections>
+                                <action selector="photoLibraryButtonPressed:" destination="UGH-T4-xY8" id="vA1-qy-WBo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="meq-Hv-vnv">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="UGH-T4-xY8" id="30F-03-pui"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cameraButton" destination="meq-Hv-vnv" id="Gbb-Jm-6QR"/>
+                        <outlet property="libraryButton" destination="oTR-5D-slg" id="YqQ-d4-262"/>
                         <outlet property="mapView" destination="8hY-OS-jpY" id="abn-pI-9wF"/>
+                        <outlet property="saveImage" destination="rRp-xR-NV4" id="Ua0-JO-ZwY"/>
                         <outlet property="yelpBizTable" destination="RUj-GC-tXF" id="IPq-mw-Sfy"/>
                     </connections>
                 </viewController>

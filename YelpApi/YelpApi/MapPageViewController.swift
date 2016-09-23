@@ -16,6 +16,10 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var yelpBizTable: UITableView!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var libraryButton: UIBarButtonItem!
+    @IBOutlet weak var saveImage: UIImageView!
+    
     
     let locationManager = CLLocationManager()
     
@@ -42,14 +46,15 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     var emptyString: String = ""
-    
-  //  var yelpBusinessImages: [UIImage] = []
-    
+
     private let mainOperation = OperationQueue.main
  
     var yelpBusiness = [YelpDataItem]()
     
     var yelpImages: [UIImage] = []
+    
+    var yelpLocations: [location] = []
+//  API Call
     
     func apiCall() {
         
@@ -75,15 +80,21 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 
                 guard let dictionary = i as? NSDictionary else { continue }
                 
+                print(dictionary)
+                
                 guard let yelpDictionary = YelpDataItem.fromjson(dictionary: dictionary) else {
                     print("error in guard")
                     return }
+                
+//                let locationInfo: [location] = yelpDictionary.location
                 
                 guard let newData = try? Data(contentsOf: yelpDictionary.url) else {return}
                 
                 self.yelpBusiness.append(yelpDictionary)
                 
                 self.yelpImages.append(UIImage(data: newData)!)
+                
+//                self.yelpLocations.append(bizLocations)
             }
             
             
@@ -97,19 +108,25 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
     }
     
+//  Location Manager
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last
         
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        let center = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
         
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1 , longitudeDelta: 1))
         
         mapView.setRegion(region, animated: true)
         
         locationManager.stopUpdatingLocation()
         
     }
+    
+
+    
+//  TableView layout
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Errors" + error.localizedDescription)
@@ -142,12 +159,43 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         cell.bizPhoto.image = yelpImages[indexPath.row]
         
-//        let urlAsAString = "
+        cell.bizIDLabel.text = yelpData.id
+        
+//        cell.bizAddressLabel.text = yelpData.location
         
         return cell
     }
     
-
+    @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
+    
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.sourceType = .camera
+        
+        present(picker, animated: true, completion: nil)
+        
+    }
+    @IBAction func photoLibraryButtonPressed(_ sender: UIBarButtonItem) {
+       
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        
+        present(picker, animated: true, completion: nil)
+        
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        saveImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage; dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+//      Library Image Picker func
+//
 //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 //        
 //        ImageDisplay.image = info [UIImagePickerControllerOriginalImage] as? UIImage;

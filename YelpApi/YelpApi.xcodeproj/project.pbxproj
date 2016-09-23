@@ -26,6 +26,7 @@
 		0A1A96441D91B59D00FF7D07 /* yelp-white-bkgd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A96431D91B59D00FF7D07 /* yelp-white-bkgd.png */; };
 		0A1A96461D91B5C900FF7D07 /* yelp-2c-outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A96451D91B5C900FF7D07 /* yelp-2c-outline.png */; };
 		0A1A96481D92006E00FF7D07 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A96471D92006E00FF7D07 /* TableViewController.swift */; };
+		0A7773DB1D94CEBB0022459E /* photoLibraryIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7773DA1D94CEBB0022459E /* photoLibraryIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		0A1A96431D91B59D00FF7D07 /* yelp-white-bkgd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yelp-white-bkgd.png"; sourceTree = "<group>"; };
 		0A1A96451D91B5C900FF7D07 /* yelp-2c-outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yelp-2c-outline.png"; sourceTree = "<group>"; };
 		0A1A96471D92006E00FF7D07 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		0A7773DA1D94CEBB0022459E /* photoLibraryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photoLibraryIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		0A148F0C1D8C115D0031430B /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				0A7773DA1D94CEBB0022459E /* photoLibraryIcon.png */,
 				0A1A96451D91B5C900FF7D07 /* yelp-2c-outline.png */,
 				0A1A96431D91B59D00FF7D07 /* yelp-white-bkgd.png */,
 				0A1A963D1D91A2C800FF7D07 /* camera-inverted.png */,
@@ -187,6 +190,7 @@
 				0A148F161D8C124D0031430B /* treasure-chest-open-366952319.jpg in Resources */,
 				0A1A963E1D91A2C800FF7D07 /* camera-inverted.png in Resources */,
 				0A1A96461D91B5C900FF7D07 /* yelp-2c-outline.png in Resources */,
+				0A7773DB1D94CEBB0022459E /* photoLibraryIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
