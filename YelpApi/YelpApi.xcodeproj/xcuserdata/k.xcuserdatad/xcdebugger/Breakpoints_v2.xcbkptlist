@@ -6,15 +6,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpApi/YelpData.swift"
-            timestampString = "496290278.966264"
+            timestampString = "496344960.922957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "fromjson(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpApi/MapPageViewController.swift"
-            timestampString = "496292631.412326"
+            timestampString = "496296255.897158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "locationManager(manager:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,12 +42,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpApi/MapPageViewController.swift"
-            timestampString = "496292631.412326"
+            timestampString = "496296255.897158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "apiCall()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YelpApi/YelpData.swift"
+            timestampString = "496344960.922957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "YelpDataItem"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YelpApi.YelpDataItem.coordinates.getter : __C.CLLocationCoordinate2D"
+                  moduleName = "YelpApi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k/Documents/Repositories/GA-iOS/MyProjects/YelpAPI_App/YelpApi/YelpApi/YelpData.swift"
+                  timestampString = "496346615.119263"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YelpApi.YelpDataItem.coordinates.setter : __C.CLLocationCoordinate2D"
+                  moduleName = "YelpApi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k/Documents/Repositories/GA-iOS/MyProjects/YelpAPI_App/YelpApi/YelpApi/YelpData.swift"
+                  timestampString = "496346615.122358"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YelpApi/YelpData.swift"
+            timestampString = "496344949.250069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "fromjson(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

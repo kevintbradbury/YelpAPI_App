@@ -43,7 +43,10 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         apiCall()
         
+        
     }
+    
+    
     
     var emptyString: String = ""
 
@@ -114,9 +117,11 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         let location = locations.last
         
-        let center = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+        let span = MKCoordinateSpanMake(0.002, 0.002)
         
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1 , longitudeDelta: 1))
+//        let center = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+        
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!), span: span)
         
         mapView.setRegion(region, animated: true)
         
@@ -161,9 +166,32 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         cell.bizIDLabel.text = yelpData.id
         
+        
+
+        
+        
 //        cell.bizAddressLabel.text = yelpData.location
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let yelpData = yelpBusiness[indexPath.row]
+        
+        let location = yelpData.coordinates
+        
+        let span = MKCoordinateSpanMake(0.002, 0.002)
+        
+        let region = MKCoordinateRegion(center: location, span: span)
+        
+        mapView.setRegion(region, animated: true)
+        
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = location
+        
+        mapView.addAnnotation(annotation)
     }
     
     @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
@@ -176,30 +204,11 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         present(picker, animated: true, completion: nil)
         
     }
-    @IBAction func photoLibraryButtonPressed(_ sender: UIBarButtonItem) {
-       
-        let picker = UIImagePickerController()
-        
-        picker.delegate = self
-        picker.sourceType = .photoLibrary
-        
-        present(picker, animated: true, completion: nil)
-        
-    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         saveImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage; dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
-//      Library Image Picker func
-//
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        
-//        ImageDisplay.image = info [UIImagePickerControllerOriginalImage] as? UIImage;
-//    }
 
 
 }

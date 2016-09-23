@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 typealias Callback = (UIImage?) -> ()
 
@@ -156,6 +157,7 @@ struct YelpDataItem {
     var id: String
     var review_count: Int
     var name: String
+    var coordinates: CLLocationCoordinate2D
     
     static func fromjson(dictionary: NSDictionary) -> YelpDataItem? {
         guard let imageUrl = dictionary["image_url"] as? String,
@@ -164,12 +166,22 @@ struct YelpDataItem {
             let phone = dictionary["phone"] as? String,
             let id = dictionary["id"] as? String,
             let review_count = dictionary["review_count"] as? Int,
-            let name = dictionary["name"] as? String else {
+            let name = dictionary["name"] as? String,
+            let coordinates = dictionary["coordinates"] as? NSDictionary else {
                 print("Guard failed on fromJson()")
                 return nil
         }
         guard let url = URL(string: imageUrl) else { return nil }
-        return YelpDataItem(url: url, rating: rating, price: price, phone: phone, id: id, review_count: review_count, name: name)
+        
+        guard let coordinatesDictionary = dictionary["coordinates"] as? NSDictionary else { return nil }
+        
+            guard let latitude = coordinatesDictionary["latitude"] as? CLLocationDegrees else { return nil }
+        
+            guard let longitude = coordinatesDictionary["longitude"] as? CLLocationDegrees else { return nil }
+        
+        let coordinatesObject = CLLocationCoordinate2D(latitude: latitude , longitude: longitude)
+        
+        return YelpDataItem(url: url, rating: rating, price: price, phone: phone, id: id, review_count: review_count, name: name, coordinates: coordinatesObject)
     }
 }
 
@@ -205,3 +217,6 @@ struct location {
 //}
 
 }
+
+
+
