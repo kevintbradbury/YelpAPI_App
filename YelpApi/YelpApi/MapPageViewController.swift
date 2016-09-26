@@ -43,6 +43,7 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         apiCall()
         
+      
         
     }
     
@@ -129,13 +130,16 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
     }
     
-
-    
-//  TableView layout
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Errors" + error.localizedDescription)
     }
+    
+//    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+//        CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//    }
+
+    
+//  TableView layout
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -151,7 +155,7 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("yelp business count - \(yelpBusiness.count)")
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MapViewTableViewCell else { return UITableViewCell() }
         
         let yelpData = yelpBusiness[indexPath.row]

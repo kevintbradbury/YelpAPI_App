@@ -11,19 +11,28 @@ import UIKit
 
 class TeasureHuntViewController: UITableViewController {
     
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    let defaultArray = ["Find the weirdest drink on the menu.", "Try the spiciest thing on the menu", "Share dessert with a stranger", "Thumb wrestle a server"]
-    
     var scavengerHuntArray: [String]?
    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return defaultArray.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TreasureHuntTableCell else { return UITableViewCell() }
+        
+        cell.arrayTextField.text = defaultArray[indexPath.row]
+        cell.arrayTextField.textColor = UIColor.yellow
+        return cell
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,3 +41,6 @@ class TeasureHuntViewController: UITableViewController {
     
     
 }
+
+var defaultArray = ["Find the weirdest drink on the menu.", "Try the spiciest thing on the menu", "Share dessert with a stranger", "Thumb wrestle a server"]
+

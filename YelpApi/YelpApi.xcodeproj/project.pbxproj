@@ -27,6 +27,8 @@
 		0A1A96461D91B5C900FF7D07 /* yelp-2c-outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A96451D91B5C900FF7D07 /* yelp-2c-outline.png */; };
 		0A1A96481D92006E00FF7D07 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A96471D92006E00FF7D07 /* TableViewController.swift */; };
 		0A1DBF611D95A069005F6F07 /* treasureChest-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1DBF601D95A069005F6F07 /* treasureChest-inverted.png */; };
+		0A1DBF631D95AC38005F6F07 /* TreasureHuntTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DBF621D95AC38005F6F07 /* TreasureHuntTableCell.swift */; };
+		0A1DBF651D95BC6E005F6F07 /* newArrayItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DBF641D95BC6E005F6F07 /* newArrayItemViewController.swift */; };
 		0A7773DB1D94CEBB0022459E /* photoLibraryIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7773DA1D94CEBB0022459E /* photoLibraryIcon.png */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		0A1A96451D91B5C900FF7D07 /* yelp-2c-outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yelp-2c-outline.png"; sourceTree = "<group>"; };
 		0A1A96471D92006E00FF7D07 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		0A1DBF601D95A069005F6F07 /* treasureChest-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treasureChest-inverted.png"; sourceTree = "<group>"; };
+		0A1DBF621D95AC38005F6F07 /* TreasureHuntTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureHuntTableCell.swift; sourceTree = "<group>"; };
+		0A1DBF641D95BC6E005F6F07 /* newArrayItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newArrayItemViewController.swift; sourceTree = "<group>"; };
 		0A7773DA1D94CEBB0022459E /* photoLibraryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photoLibraryIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,11 +94,13 @@
 				0A148EFA1D8C05900031430B /* AppDelegate.swift */,
 				0A148EFC1D8C05900031430B /* MainViewController.swift */,
 				0A148EFE1D8C05900031430B /* Main.storyboard */,
-				0A1A96411D91AF3400FF7D07 /* YelpData.swift */,
 				0A1A963F1D91A7F800FF7D07 /* MapViewTableViewCell.swift */,
+				0A1DBF621D95AC38005F6F07 /* TreasureHuntTableCell.swift */,
+				0A1DBF641D95BC6E005F6F07 /* newArrayItemViewController.swift */,
 				0A148F171D8C27C90031430B /* TreasureHuntViewController.swift */,
 				0A1A96471D92006E00FF7D07 /* TableViewController.swift */,
 				0A148F191D8C29180031430B /* MapPageViewController.swift */,
+				0A1A96411D91AF3400FF7D07 /* YelpData.swift */,
 				0A148F011D8C05900031430B /* Assets.xcassets */,
 				0A148F031D8C05900031430B /* LaunchScreen.storyboard */,
 				0A148F061D8C05900031430B /* Info.plist */,
@@ -205,6 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1DBF651D95BC6E005F6F07 /* newArrayItemViewController.swift in Sources */,
+				0A1DBF631D95AC38005F6F07 /* TreasureHuntTableCell.swift in Sources */,
 				0A148F1A1D8C29180031430B /* MapPageViewController.swift in Sources */,
 				0A1A96481D92006E00FF7D07 /* TableViewController.swift in Sources */,
 				0A1A96421D91AF3400FF7D07 /* YelpData.swift in Sources */,
