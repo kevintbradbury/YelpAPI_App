@@ -20,6 +20,9 @@ class MapViewTableViewCell: UITableViewCell {
     @IBOutlet weak var tableCellContentView: UIView!
     @IBOutlet weak var yelpLogoButton: UIButton!
     @IBOutlet weak var bizIDLabel: UILabel!
+    @IBOutlet weak var bizCity: UILabel!
+    @IBOutlet weak var bizState: UILabel!
+    
     
     @IBAction func yelpLogoButtonPressed(_ sender: AnyObject) {
         let yelpBiz = "https://www.yelp.com/biz/"

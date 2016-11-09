@@ -47,19 +47,15 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     private let mainOperation = OperationQueue.main
     var yelpBusiness = [YelpDataItem]()
     var yelpImages: [UIImage] = []
-    //var location: CLLocationCoordinate2D?
     
     
     //  API Call
-    
     func apiCall() {
         
         emptyString = "https://api.yelp.com/v3/businesses/search?term=spicy&latitude=\(currentLatitude)&longitude=\(currentLongitude)"
-        
         print("empty string is : \(emptyString) ")
         
         let url = URL(string: emptyString)!
-        
         var request = URLRequest.init(url: url)
         
         request.setValue("Bearer XT-cgvuAYuopiCBZfTktylJweQmBcaHksb2mEwMpSG7ZBfWdWmcmWtOwEiyCAJBjTL7_hMFoT4Np976vktSLBVcSZy7nVoDOA4cH1Fl7fEnGADkjhEWInXEMhdXhV3Yx", forHTTPHeaderField: "Authorization")
@@ -69,15 +65,12 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let dataTask = session.dataTask(with: request) {(data, response, error) -> Void in
             
             guard let moreData = data else { return }
-            
             guard let someObject = (try? JSONSerialization.jsonObject(with: moreData, options: [])) as? NSDictionary else { return }
-            
             guard let array = (someObject["businesses"]) as? NSArray else { return }
             
             for i in array {
                 
                 guard let dictionary = i as? NSDictionary else { continue }
-                
                 print(dictionary)
                 
                 guard let yelpDictionary = YelpDataItem.fromjson(dictionary: dictionary) else {
@@ -87,7 +80,6 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 guard let newData = try? Data(contentsOf: yelpDictionary.url) else {return}
                 
                 self.yelpBusiness.append(yelpDictionary)
-                
                 self.yelpImages.append(UIImage(data: newData)!)
 
             }
@@ -156,8 +148,8 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         cell.bizRatingNumberLabel.text = ratingAsAstring
         
         cell.bizPhoto.image = yelpImages[indexPath.row]
-        
         cell.bizIDLabel.text = yelpData.id
+        
         
         return cell
     }
@@ -165,17 +157,13 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let yelpData = yelpBusiness[indexPath.row]
-        
         let location = yelpData.coordinates
-        
         let span = MKCoordinateSpanMake(0.002, 0.002)
-        
         let region = MKCoordinateRegion(center: location, span: span)
         
         mapView.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()
-        
         annotation.coordinate = location
         
         mapView.addAnnotation(annotation)

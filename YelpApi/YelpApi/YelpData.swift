@@ -22,8 +22,6 @@ class Yelp {
 
     static let searchWords = apiLink
 
-//    private let apiKey:
-
     var imageArray: [UIImage] = []
 
     private static let async: OperationQueue = {
@@ -49,8 +47,6 @@ class Yelp {
     }
 
     private static func createUrlFor(searchTerm term: String?) -> URL? {
-
-     //   guard let escapedTerm = term else { return nil }
 
         guard let link = term else { return nil }
 
@@ -136,6 +132,7 @@ struct YelpDataItem {
     var id: String
     var review_count: Int
     var name: String
+    var address: NSDictionary
     var coordinates: CLLocationCoordinate2D
 
     static func fromjson(dictionary: NSDictionary) -> YelpDataItem? {
@@ -146,6 +143,7 @@ struct YelpDataItem {
             let id = dictionary["id"] as? String,
             let review_count = dictionary["review_count"] as? Int,
             let name = dictionary["name"] as? String,
+            let address = dictionary["location"] as? NSDictionary,
             let coordinates = dictionary["coordinates"] as? NSDictionary else {
                 print("Guard failed on fromJson()")
                 return nil
@@ -155,26 +153,22 @@ struct YelpDataItem {
         guard let coordinatesDictionary = dictionary["coordinates"] as? NSDictionary else { return nil }
 
             guard let latitude = coordinatesDictionary["latitude"] as? CLLocationDegrees else { return nil }
-
             guard let longitude = coordinatesDictionary["longitude"] as? CLLocationDegrees else { return nil }
+            let coordinatesObject = CLLocationCoordinate2D(latitude: latitude , longitude: longitude)
+        
+//        guard let addressDictionary = dictionary["location"] as? NSDictionary else { return nil }
+////            guard let streetAddress = addressDictionary["address1"] as? String else { return nil }
+////            guard let cityAddress = addressDictionary["city"] as? String else { return nil}
+////            guard let stateAddress = addressDictionary["state"] as? String else { return nil }
+////        let addressObject = ["street": streetAddress, "city": cityAddress, "state": stateAddress]
+////                print("address Object is : \(addressObject) ")
 
-        let coordinatesObject = CLLocationCoordinate2D(latitude: latitude , longitude: longitude)
-
-        return YelpDataItem(url: url, rating: rating, price: price, phone: phone, id: id, review_count: review_count, name: name, coordinates: coordinatesObject)
+        return YelpDataItem(url: url, rating: rating, price: price, phone: phone, id: id, review_count: review_count, name: name, address: address as NSDictionary, coordinates: coordinatesObject)
     }
 }
 
 
 
 
-
-//
-//struct businessCoordinates {
-//    let coordinates: Dictionary = [
-//        latitude: Double,
-//        longitude: Double
-//    ]
-//
-//}
 
 
