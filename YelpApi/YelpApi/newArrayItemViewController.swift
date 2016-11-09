@@ -17,6 +17,8 @@ class NewArrayItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addButton.layer.cornerRadius = 15
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {

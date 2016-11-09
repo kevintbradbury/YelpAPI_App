@@ -31,6 +31,13 @@ class TeasureHuntViewController: UITableViewController {
         
         cell.arrayTextField.text = defaultArray[indexPath.row]
         cell.arrayTextField.textColor = UIColor.yellow
+        cell.button.layer.cornerRadius = 15
+        
+        let index = defaultArray[indexPath.row]
+        
+        cell.imageView?.isHidden
+        
+        
         return cell
     }
     

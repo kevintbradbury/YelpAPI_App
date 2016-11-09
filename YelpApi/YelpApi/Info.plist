@@ -36,5 +36,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This authorizes the app to use your location.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Uses the camera to add pictures from your scavenger hunts!</string>
 </dict>
 </plist>
