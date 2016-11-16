@@ -12,8 +12,10 @@ import UIKit
 class NewArrayItemViewController: UIViewController {
     
     @IBOutlet weak var newArrayItemField: UITextField!
-    
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var categoryTxtField: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,8 @@ class NewArrayItemViewController: UIViewController {
     @IBAction func addButtonPressed(_ sender: UIButton) {
         guard let text = newArrayItemField.text else { return }
         defaultArray.append(text)
+        guard let category = categoryTxtField.text else { return }
+        categorySearchItem.append(category)
     }
     
     override func didReceiveMemoryWarning() {

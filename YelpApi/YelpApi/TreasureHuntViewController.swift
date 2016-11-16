@@ -19,7 +19,7 @@ class TeasureHuntViewController: UITableViewController {
     }
     
     var scavengerHuntArray: [String]?
-   
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -27,27 +27,33 @@ class TeasureHuntViewController: UITableViewController {
         return defaultArray.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TreasureHuntTableCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TreasureHuntTableCell else { return UITableViewCell() }
+        
         
         cell.arrayTextField.text = defaultArray[indexPath.row]
         cell.arrayTextField.textColor = UIColor.yellow
         cell.button.layer.cornerRadius = 15
+        cell.categoryTxtFld.text = categorySearchItem[indexPath.row]
         
         let index = defaultArray[indexPath.row]
         
-        cell.imageView?.isHidden
-        
         
         return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        searchIndexItem = categorySearchItem[indexPath.row]
+        print("search category set to --> \(searchIndexItem) ")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
- 
+    
     
     
 }
 
 var defaultArray = ["Find the weirdest drink on the menu.", "Try the spiciest thing on the menu", "Share dessert with a stranger", "Thumb wrestle a server"]
 
+var categorySearchItem = ["weird", "spicy", "dessert", "thumb wrestle"]

@@ -14,6 +14,7 @@ class TreasureHuntTableCell: UITableViewCell {
     @IBOutlet weak var arrayTextField: UITextField!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var hiddenImage: UIImageView!
-
-    
+    @IBOutlet weak var categoryTxtFld: UITextField!
+   
+   
 }

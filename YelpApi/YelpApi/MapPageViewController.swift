@@ -17,7 +17,7 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var yelpBizTable: UITableView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-    @IBOutlet weak var libraryButton: UIBarButtonItem!
+    
     
     
     var locationManager: CLLocationManager!
@@ -52,7 +52,9 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     //  API Call
     func apiCall() {
         
-        emptyString = "https://api.yelp.com/v3/businesses/search?term=spicy&latitude=\(currentLatitude)&longitude=\(currentLongitude)"
+        guard let searchItem = searchIndexItem as? String else {return}
+        
+        emptyString = "https://api.yelp.com/v3/businesses/search?term="+searchItem + "&latitude=\(currentLatitude)&longitude=\(currentLongitude)"
         print("empty string is : \(emptyString) ")
         
         let url = URL(string: emptyString)!
@@ -150,6 +152,14 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         cell.bizPhoto.image = yelpImages[indexPath.row]
         cell.bizIDLabel.text = yelpData.id
         
+        let streetAddress = yelpData.address["address1"]
+        cell.bizAddressLabel.text = streetAddress as! String?
+
+        let city = yelpData.address["city"]
+        cell.bizCity.text = city as! String?
+        
+        let state = yelpData.address["state"]
+        cell.bizState.text = state as! String?
         
         return cell
     }
@@ -193,5 +203,5 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
 }
 
 var imageArray: [UIImage] = []
-
+var searchIndexItem = ""
 
