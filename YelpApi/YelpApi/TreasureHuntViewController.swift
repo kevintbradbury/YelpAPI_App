@@ -42,8 +42,8 @@ class TeasureHuntViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        searchIndexItem = categorySearchItem[indexPath.row]
-        print("search category set to --> \(searchIndexItem) ")
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

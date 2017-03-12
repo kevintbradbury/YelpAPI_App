@@ -23,6 +23,11 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     var locationManager: CLLocationManager!
     var currentLongitude = ""
     var currentLatitude = ""
+    var emptyString: String = ""
+    private let mainOperation = OperationQueue.main
+    var yelpBusiness = [YelpDataItem]()
+    var yelpImages: [UIImage] = []
+    var searchIndexItem = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,32 +35,28 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         yelpBizTable.delegate = self
         yelpBizTable.dataSource = self
         
+        setLocationManager()
+        
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+    
+    }
+    
+    func setLocationManager() {
+        
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
-        
-        mapView.delegate = self
-        mapView.showsUserLocation = true
     
-        
     }
-    
-    var emptyString: String = ""
-    private let mainOperation = OperationQueue.main
-    var yelpBusiness = [YelpDataItem]()
-    var yelpImages: [UIImage] = []
-    
     
     //  API Call
     func apiCall() {
         
-        guard let searchItem = searchIndexItem as? String else {return}
-        
-        emptyString = "https://api.yelp.com/v3/businesses/search?term="+searchItem + "&latitude=\(currentLatitude)&longitude=\(currentLongitude)"
-        print("empty string is : \(emptyString) ")
+        emptyString = "https://api.yelp.com/v3/businesses/search?term=" + searchIndexItem + "&latitude=\(currentLatitude)&longitude=\(currentLongitude)"
         
         let url = URL(string: emptyString)!
         var request = URLRequest.init(url: url)
@@ -73,11 +74,11 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             for i in array {
                 
                 guard let dictionary = i as? NSDictionary else { continue }
-                print(dictionary)
                 
                 guard let yelpDictionary = YelpDataItem.fromjson(dictionary: dictionary) else {
                     print("error in guard")
-                    return }
+                    return
+                }
                 
                 guard let newData = try? Data(contentsOf: yelpDictionary.url) else {return}
                 
@@ -194,14 +195,11 @@ class MapPageViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
         
-        imageArray.append(image)
-        
         dismiss(animated: true, completion: nil)
     }
 
 
 }
 
-var imageArray: [UIImage] = []
-var searchIndexItem = ""
+
 
