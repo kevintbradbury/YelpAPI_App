@@ -32,14 +32,16 @@ struct YelpDataItem {
             let name = dictionary["name"] as? String,
             let address = dictionary["location"] as? NSDictionary,
             let coordinates = dictionary["coordinates"] as? NSDictionary else {
+
                 print("Guard failed on fromJson()")
                 return nil
         }
+        
         guard let url = URL(string: imageUrl) else { return nil }
-        guard let latitude = coordinates["latitude"] as? CLLocationDegrees else { return nil }
-        guard let longitude = coordinates["longitude"] as? CLLocationDegrees else { return nil }
-        print("\(latitude) :lat & \(longitude) :long")
-        let coordinatesObject = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude) , longitude: CLLocationDegrees(longitude))
+        
+        let latitude = coordinates["latitude"] as! CLLocationDegrees
+        let longitude = coordinates["longitude"] as! CLLocationDegrees
+        let coordinatesObject = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         return YelpDataItem(url: url, rating: rating, phone: phone, id: id, price: price, review_count: review_count, name: name, address: address, coordinates: coordinatesObject)
     }
